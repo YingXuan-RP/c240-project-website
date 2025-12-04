@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusConnect - Find Your Perfect Study Partner</title>
+    <meta name="description" content="Instantly match with study partners who share your schedule, subjects, and study style">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                <span>CampusConnect</span>
+            </div>
+            <ul class="nav-menu" role="menubar">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#how-it-works" role="menuitem">How It Works</a></li>
+                <li role="none"><a href="#features" role="menuitem">Features</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+                <li role="none"><a href="#" id="navContactLink" role="menuitem">Contact</a></li>
+            </ul>
+            <div class="nav-auth">
+                <button class="btn btn-outline" id="loginBtn">Login</button>
+                <button class="btn btn-primary" id="signupBtn">Sign Up</button>
+            </div>
+            <button class="nav-toggle" aria-label="Toggle mobile menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Find Your Perfect <span class="highlight">Study Partner</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Instantly match with study partners who share your schedule, subjects, 
+                    and study style — all in one smart campus web app.
+                </p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" id="getStartedBtn">
+                        <i class="fas fa-rocket" aria-hidden="true"></i>
+                        Get Started Free
+                    </button>
+                    <button class="btn btn-outline btn-large" id="watchDemoBtn">
+                        <i class="fas fa-play" aria-hidden="true"></i>
+                        Watch Demo
+                    </button>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">1000</span>
+                        <span class="stat-label">Active Students</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">500</span>
+                        <span class="stat-label">Study Groups Formed</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-number">95</span>
+                        <span class="stat-label">Success Rate</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-card floating">
+                    <div class="profile-preview">
+                        <div class="profile-img"></div>
+                        <div class="profile-info">
+                            <h3>Sarah M.</h3>
+                            <p>Computer Science • Available Now</p>
+                            <div class="subjects">
+                                <span class="subject-tag">JavaScript</span>
+                                <span class="subject-tag">Algorithms</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content (Hidden when logged in) -->
+    <div id="mainContent">
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How CampusConnect Works</h2>
+                <p>Get matched with your ideal study partner in just three simple steps</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-user-plus"></i>
+                    </div>
+                    <h3>1. Create Your Profile</h3>
+                    <p>Tell us about your subjects, schedule, and study preferences</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>2. Smart Matching</h3>
+                    <p>Our algorithm finds students with compatible schedules and subjects</p>
+                </div>
+                <div class="step">
+                    <div class="step-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>3. Connect & Study</h3>
+                    <p>Chat, schedule sessions, and boost your academic performance together</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Powerful Features for Better Study Sessions</h2>
+                <p>Everything you need to find and connect with the perfect study partner</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Smart Scheduling</h3>
+                    <p>Automatically match with students who have overlapping free time</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3>Subject Matching</h3>
+                    <p>Find partners studying the same courses and topics you need help with</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Study Style Compatibility</h3>
+                    <p>Match based on preferred environments: silent focus or active discussion</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Location-Based</h3>
+                    <p>Connect with students near you or in preferred study locations on campus</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>Instant Messaging</h3>
+                    <p>Built-in chat to coordinate study sessions and share resources</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Peer Reviews</h3>
+                    <p>Rate and review study partners to build trust in the community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Can Do Section -->
+    <section class="what-you-can-do">
+        <div class="container">
+            <div class="section-header">
+                <h2>What You Can Do After Signing Up</h2>
+                <p>Unlock a complete study collaboration experience designed for your academic success</p>
+            </div>
+            <div class="capabilities-grid">
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-user-edit"></i>
+                    </div>
+                    <h3>Build Your Study Profile</h3>
+                    <p>Create a comprehensive profile showcasing your academic interests, study preferences, and availability</p>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h3>Set Study Preferences</h3>
+                    <p>Customize your study environment preferences, session duration, and learning style for better matches</p>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h3>Match with Study Partners</h3>
+                    <p>Get matched with compatible students based on subjects, schedules, and study preferences</p>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h3>Browse Study Requests</h3>
+                    <p>Explore other students' study session requests and join sessions that match your needs</p>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-plus-circle"></i>
+                    </div>
+                    <h3>Post Study Sessions</h3>
+                    <p>Create and share your own study session requests to attract the right study partners</p>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3>Chat with Partners</h3>
+                    <p>Connect instantly with matched partners through our built-in messaging system</p>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Track Study Sessions</h3>
+                    <p>Keep a record of past study sessions, track your progress, and review your academic journey</p>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3>Save Favourite Partners</h3>
+                    <p>Build a network of trusted study partners and easily reconnect for future sessions</p>
+                </div>
+                <div class="capability-item">
+                    <div class="capability-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Get Smart Recommendations</h3>
+                    <p>Receive personalised study partner and session recommendations based on your activity and preferences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Dashboard (Hidden by default) -->
+    <section class="dashboard" id="userDashboard" style="display: none;">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Welcome to Your Study Hub</h1>
+                <p id="userWelcome">Ready to find your perfect study partner?</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Profile Section -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-edit"></i> Study Profile</h3>
+                        <span class="status-badge incomplete">Incomplete</span>
+                    </div>
+                    <p>Build your comprehensive study profile to get better matches</p>
+                    <button class="btn btn-primary" id="buildProfileBtn">Build Profile</button>
+                </div>
+
+                <!-- Preferences Section -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-cogs"></i> Study Preferences</h3>
+                        <span class="status-badge incomplete">Not Set</span>
+                    </div>
+                    <p>Set your study preferences for better partner matching</p>
+                    <button class="btn btn-primary" id="setPreferencesBtn">Set Preferences</button>
+                </div>
+
+                <!-- Matching Section -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-handshake"></i> Find Study Partners</h3>
+                        <span class="status-badge active">3 matches available</span>
+                    </div>
+                    <p>Discover compatible study partners based on your profile</p>
+                    <button class="btn btn-primary" id="findPartnersBtn">Find Partners</button>
+                </div>
+
+                <!-- Browse Requests -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-search"></i> Browse Study Requests</h3>
+                        <span class="status-badge active">5 new requests</span>
+                    </div>
+                    <p>Explore study sessions posted by other students</p>
+                    <button class="btn btn-primary" id="browseRequestsBtn">Browse Requests</button>
+                </div>
+
+                <!-- Post Session -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-plus-circle"></i> Create Study Session</h3>
+                    </div>
+                    <p>Post your own study session and invite partners</p>
+                    <button class="btn btn-primary" id="createSessionBtn">Create Session</button>
+                </div>
+
+                <!-- Messages -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-comment-dots"></i> Messages</h3>
+                        <span class="status-badge active">2 new messages</span>
+                    </div>
+                    <p>Chat with your study partners and coordinate sessions</p>
+                    <button class="btn btn-primary" id="messagesBtn">View Messages</button>
+                </div>
+
+                <!-- Study History -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-history"></i> Study Sessions</h3>
+                        <span class="status-badge">3 completed</span>
+                    </div>
+                    <p>Track your past study sessions and progress</p>
+                    <button class="btn btn-primary" id="studyHistoryBtn">View History</button>
+                </div>
+
+                <!-- Favourites -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-heart"></i> Favourite Partners</h3>
+                        <span class="status-badge">1 saved</span>
+                    </div>
+                    <p>Your trusted study partners for easy reconnection</p>
+                    <button class="btn btn-primary" id="favouritesBtn">View Favourites</button>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-lightbulb"></i> Recommendations</h3>
+                        <span class="status-badge active">4 suggestions</span>
+                    </div>
+                    <p>Personalised study partner and session recommendations</p>
+                    <button class="btn btn-primary" id="recommendationsBtn">View Recommendations</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- User Dashboard (Hidden by default) -->
+    <section class="dashboard" id="userDashboard" style="display: none;">
+        <div class="container">
+            <div class="dashboard-header">
+                <h1>Welcome to Your Study Hub</h1>
+                <p id="userWelcome">Ready to find your perfect study partner?</p>
+            </div>
+            
+            <div class="dashboard-grid">
+                <!-- Profile Section -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-user-edit"></i> Study Profile</h3>
+                        <span class="status-badge incomplete">Incomplete</span>
+                    </div>
+                    <p>Build your comprehensive study profile to get better matches</p>
+                    <button class="btn btn-primary" id="buildProfileBtn">Build Profile</button>
+                </div>
+
+                <!-- Preferences Section -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-cogs"></i> Study Preferences</h3>
+                        <span class="status-badge incomplete">Not Set</span>
+                    </div>
+                    <p>Set your study preferences for better partner matching</p>
+                    <button class="btn btn-primary" id="setPreferencesBtn">Set Preferences</button>
+                </div>
+
+                <!-- Matching Section -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-handshake"></i> Find Study Partners</h3>
+                        <span class="status-badge active">3 matches available</span>
+                    </div>
+                    <p>Discover compatible study partners based on your profile</p>
+                    <button class="btn btn-primary" id="findPartnersBtn">Find Partners</button>
+                </div>
+
+                <!-- Browse Requests -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-search"></i> Browse Study Requests</h3>
+                        <span class="status-badge active">5 new requests</span>
+                    </div>
+                    <p>Explore study sessions posted by other students</p>
+                    <button class="btn btn-primary" id="browseRequestsBtn">Browse Requests</button>
+                </div>
+
+                <!-- Post Session -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-plus-circle"></i> Create Study Session</h3>
+                    </div>
+                    <p>Post your own study session and invite partners</p>
+                    <button class="btn btn-primary" id="createSessionBtn">Create Session</button>
+                </div>
+
+                <!-- Messages -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-comment-dots"></i> Messages</h3>
+                        <span class="status-badge active">2 new messages</span>
+                    </div>
+                    <p>Chat with your study partners and coordinate sessions</p>
+                    <button class="btn btn-primary" id="messagesBtn">View Messages</button>
+                </div>
+
+                <!-- Study History -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-history"></i> Study Sessions</h3>
+                        <span class="status-badge">3 completed</span>
+                    </div>
+                    <p>Track your past study sessions and progress</p>
+                    <button class="btn btn-primary" id="studyHistoryBtn">View History</button>
+                </div>
+
+                <!-- Favourites -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-heart"></i> Favourite Partners</h3>
+                        <span class="status-badge">1 saved</span>
+                    </div>
+                    <p>Your trusted study partners for easy reconnection</p>
+                    <button class="btn btn-primary" id="favouritesBtn">View Favourites</button>
+                </div>
+
+                <!-- Recommendations -->
+                <div class="dashboard-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-lightbulb"></i> Recommendations</h3>
+                        <span class="status-badge active">4 suggestions</span>
+                    </div>
+                    <p>Personalised study partner and session recommendations</p>
+                    <button class="btn btn-primary" id="recommendationsBtn">View Recommendations</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Study Experience?</h2>
+                <p>Join thousands of students who are already improving their grades through collaborative learning</p>
+                <button class="btn btn-primary btn-large" id="joinNowBtn">
+                    Join CampusConnect Today
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-brand">
+                        <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        <span>CampusConnect</span>
+                    </div>
+                    <p>Connecting students for better learning outcomes</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <ul>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#pricing">Pricing</a></li>
+                            <li><a href="#security">Security</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#help">Help Center</a></li>
+                            <li><a href="#" id="contactLink">Contact</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Company</h4>
+                        <ul>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#careers">Careers</a></li>
+                            <li><a href="#blog">Blog</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 CampusConnect. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal for Sign Up -->
+    <div class="modal" id="signupModal" role="dialog" aria-labelledby="signupTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="signupTitle">Join CampusConnect</h3>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="signupForm" novalidate>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required aria-describedby="emailError">
+                        <span class="error-message" id="emailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="university">School</label>
+                        <select id="university" name="university" required aria-describedby="universityError">
+                            <option value="">Select your school</option>
+                            <option value="sas">School of Applied Science (SAS)</option>
+                            <option value="seg">School of Engineering (SEG)</option>
+                            <option value="soh">School of Hospitality (SOH)</option>
+                            <option value="soi">School of Infocomm (SOI)</option>
+                            <option value="sbz">School of Business (SBZ)</option>
+                            <option value="ssh">School of Sports and Health (SSH)</option>
+                            <option value="sta">School of Technology for Arts, Media and Design (STA)</option>
+                        </select>
+                        <span class="error-message" id="universityError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="major">Major/Field of Study</label>
+                        <input type="text" id="major" name="major" required aria-describedby="majorError">
+                        <span class="error-message" id="majorError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Get Started</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Login -->
+    <div class="modal" id="loginModal" role="dialog" aria-labelledby="loginTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="loginTitle">Welcome Back</h3>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="loginForm" novalidate>
+                    <div class="form-group">
+                        <label for="loginEmail">Email Address</label>
+                        <input type="email" id="loginEmail" name="loginEmail" required aria-describedby="loginEmailError">
+                        <span class="error-message" id="loginEmailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="loginPassword" required aria-describedby="loginPasswordError">
+                        <span class="error-message" id="loginPasswordError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe" name="rememberMe">
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Sign In</button>
+                    <div class="form-links">
+                        <a href="#" id="forgotPasswordLink">Forgot your password?</a>
+                        <p>Don't have an account? <a href="#" id="switchToSignup">Sign up here</a></p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for Contact -->
+    <div class="modal" id="contactModal" role="dialog" aria-labelledby="contactTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="contactTitle">Get in Touch</h3>
+                <button class="modal-close" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="contactForm" novalidate>
+                    <div class="form-group">
+                        <label for="contactName">Full Name</label>
+                        <input type="text" id="contactName" name="contactName" required aria-describedby="contactNameError">
+                        <span class="error-message" id="contactNameError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address</label>
+                        <input type="email" id="contactEmail" name="contactEmail" required aria-describedby="contactEmailError">
+                        <span class="error-message" id="contactEmailError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactSubject">Subject</label>
+                        <select id="contactSubject" name="contactSubject" required aria-describedby="contactSubjectError">
+                            <option value="">Select a topic</option>
+                            <option value="general">General Inquiry</option>
+                            <option value="support">Technical Support</option>
+                            <option value="feature">Feature Request</option>
+                            <option value="partnership">Partnership</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <span class="error-message" id="contactSubjectError"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage" name="contactMessage" rows="5" required aria-describedby="contactMessageError" placeholder="Tell us how we can help you..."></textarea>
+                        <span class="error-message" id="contactMessageError"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="chatbot-widget" id="chatbotWidget">
+        <div class="chatbot-header">
+            <div class="chatbot-title">
+                <i class="fas fa-robot"></i>
+                <span>Study Assistant</span>
+            </div>
+            <div class="chatbot-controls">
+                <button class="chatbot-minimize" id="minimizeChatbot">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button class="chatbot-close" id="closeChatbot">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <div class="chatbot-body" id="chatbotBody">
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="message-content">
+                        <p>Hi! I'm your Study Assistant. I can help you:</p>
+                        <ul>
+                            <li>Find compatible study partners</li>
+                            <li>Suggest study sessions</li>
+                            <li>Answer questions about CampusConnect</li>
+                            <li>Help with your study preferences</li>
+                        </ul>
+                        <p>What would you like help with today?</p>
+                    </div>
+                    <div class="message-time">Just now</div>
+                </div>
+            </div>
+            <div class="quick-actions">
+                <button class="quick-action-btn" data-action="find-partners">
+                    <i class="fas fa-users"></i> Find Partners
+                </button>
+                <button class="quick-action-btn" data-action="study-tips">
+                    <i class="fas fa-lightbulb"></i> Study Tips
+                </button>
+                <button class="quick-action-btn" data-action="help">
+                    <i class="fas fa-question"></i> Help
+                </button>
+            </div>
+        </div>
+        <div class="chatbot-footer">
+            <div class="chatbot-input-container">
+                <input type="text" id="chatbotInput" placeholder="Type your message..." maxlength="500">
+                <button id="sendMessage" class="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            <div class="chatbot-suggestions" id="chatbotSuggestions">
+                <button class="suggestion-chip" data-suggestion="How do I find study partners?">
+                    How do I find study partners?
+                </button>
+                <button class="suggestion-chip" data-suggestion="What are the best study techniques?">
+                    What are the best study techniques?
+                </button>
+                <button class="suggestion-chip" data-suggestion="How does matching work?">
+                    How does matching work?
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Toggle Button -->
+    <button class="chatbot-toggle" id="chatbotToggle">
+        <i class="fas fa-comments"></i>
+        <span class="chatbot-badge" id="chatbotBadge">1</span>
+    </button>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
