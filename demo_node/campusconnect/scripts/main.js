@@ -294,6 +294,8 @@ class CampusConnect {
     }
 
     setupDemoFunctionality() {
+        // Demo functionality can be added here
+    }
 
     init() {
         console.log('🎓 CampusConnect initialized');
