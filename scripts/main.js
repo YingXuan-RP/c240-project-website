@@ -1273,19 +1273,38 @@ class CampusConnect {
     showToast(message, type = 'info') {
         const toast = document.createElement('div');
         toast.className = `toast toast-${type}`;
-        toast.textContent = message;
+        
+        const messageSpan = document.createElement('span');
+        messageSpan.textContent = message;
+        messageSpan.className = 'toast-message';
+        
+        const closeBtn = document.createElement('button');
+        closeBtn.className = 'toast-close';
+        closeBtn.innerHTML = '&times;';
+        closeBtn.setAttribute('aria-label', 'Close notification');
+        
+        toast.appendChild(messageSpan);
+        toast.appendChild(closeBtn);
         toast.setAttribute('role', 'alert');
         
         document.body.appendChild(toast);
         
+        // Close button handler
+        const closeToast = () => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        };
+        
+        closeBtn.addEventListener('click', closeToast);
+        
         // Show toast
         setTimeout(() => toast.classList.add('show'), 100);
         
-        // Remove toast
-        setTimeout(() => {
-            toast.classList.remove('show');
-            setTimeout(() => toast.remove(), 300);
-        }, 5000);
+        // Auto remove toast after 5 seconds
+        const autoCloseTimer = setTimeout(closeToast, 5000);
+        
+        // Clear auto-close timer if manually closed
+        closeBtn.addEventListener('click', () => clearTimeout(autoCloseTimer), { once: true });
     }
 
     /**
